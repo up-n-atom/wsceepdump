@@ -1,5 +1,7 @@
 # WonderSwan Color/Swan Crystal EEPROM dumper
 
+_Always test on a handheld of lesser importance to confirm its operation_
+
 ![Wired](images/wired.jpg?raw=true "Wired")
 
 ## Components
@@ -28,7 +30,7 @@ There are nemerous guides on how to install the STM32duino bootloader and the fo
 | G         | 5         | GND        |
 | 3.3       | 8         | VCC        |
 
-1.2K pull-down resistor connected to pin 1 of the test clip and ground.
+1.2K pull-down resistor connected to pin 1 (Chip Select) of the test clip and ground.
 
 ## Usage
 
