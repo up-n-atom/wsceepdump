@@ -30,7 +30,7 @@ There are nemerous guides on how to install the STM32duino bootloader and the fo
 | G         | 5         | GND        |
 | 3.3       | 8         | VCC        |
 
-1.2K pull-down resistor connected to pin 1 (Chip Select) of the test clip and ground.
+1.2K pull-down resistor connected to pin 1 (Chip Select) and pin 5 (Ground) of the test clip.
 
 ## Usage
 
