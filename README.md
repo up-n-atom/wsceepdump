@@ -1,5 +1,7 @@
 # WonderSwan Color/Swan Crystal EEPROM dumper
 
+![Wired](images/wired.jpg?raw=true "Wired")
+
 ## Components
 
 * 1x Blue Pill [[AliExpress](https://www.aliexpress.com/item/32792513237.html)]
@@ -15,6 +17,8 @@ There are nemerous guides on how to install the STM32duino bootloader and the fo
 
 ## Wiring
 
+![Wiring](images/wiring.jpg?raw=true "Wiring")
+
 | Blue Pill | Test Clip | EEPROM     |
 |-----------|-----------|------------|
 | A4        | 1         | CS         |
@@ -23,6 +27,8 @@ There are nemerous guides on how to install the STM32duino bootloader and the fo
 | A7        | 4         | DO         |
 | G         | 5         | GND        |
 | 3.3       | 8         | VCC        |
+
+1.2K pull-down resistor connected to pin 1 of the test clip and ground.
 
 ## Usage
 
