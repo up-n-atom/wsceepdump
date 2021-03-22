@@ -21,7 +21,9 @@ Each boot writes to the EEPROM you lose the authenticity of the factory default.
 
 ## Arduino Bootloader
 
-There are nemerous guides on how to install the STM32duino bootloader and the following video https://www.youtube.com/watch?v=Myon8H111PQ does an excellent job of describing the process.
+There are nemerous guides on how to install the STM32duino bootloader and the following [video](https://www.youtube.com/watch?v=Myon8H111PQ) does an excellent job of describing the process.
+
+[![How to Install the STM32 USB Bootloader, New Version! \(Blue Pill F103C8T6\)](https://img.youtube.com/vi/Myon8H111PQ/0.jpg)](https://www.youtube.com/watch?v=Myon8H111PQ)
 
 Additionally, you may require the [STM32 Virtual COM Port Driver](https://www.st.com/en/development-tools/stsw-stm32102.html).
 
