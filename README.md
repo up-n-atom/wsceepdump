@@ -2,6 +2,8 @@
 
 _USE WITH CAUTION! Always test on a handheld of lesser importance to confirm its operation_
 
+Each boot writes to the EEPROM and with it you will lose the genuineness of the data. This includes the cart count, boot count, and previous booted cartridge. If these are not important, a custom rom and serial cable is the more convenient alternative.
+
 ![Wired](images/wired.jpg?raw=true "Wired")
 
 ## Components
