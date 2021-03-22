@@ -45,3 +45,21 @@ _Optional: 1.5K pull-up resistor connected to pin 4 (DO) and pin 8 (VCC) of the 
 3. Select all and copy the hex output.
 4. Paste the copied hex output as _hex_ into a Hex Editor such as https://hexed.it/ or [HxD](https://mh-nexus.de/en/hxd/)
 5. Save As...
+
+## Bootsplash
+
+### WonderSwan
+
+https://github.com/up-n-atom/higan/tree/ws-bootsplash/higan/System/WonderSwan%20Color
+
+* [x] Dengeki
+* [x] MS-06S Zaku II
+* [ ] RX-78-2
+* [ ] Inuyasha
+
+### SwanCrystal
+
+https://github.com/up-n-atom/higan/tree/ws-bootsplash/higan/System/SwanCrystal
+
+* [x] One Piece Grand Battle Swan Colosseum 
+* [ ] Tanita Mama Mitte
