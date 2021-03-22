@@ -1,4 +1,4 @@
-# WonderSwan Color/Swan Crystal EEPROM dumper
+# Just Enough WonderSwan Color/Swan Crystal EEPROM dumper
 
 _USE WITH CAUTION! Always test on a handheld of lesser importance to confirm its operation_
 
@@ -47,6 +47,10 @@ _Optional: 1.5K pull-up resistor connected to pin 4 (DO) and pin 8 (VCC) of the 
 3. Select all and copy the hex output.
 4. Paste the copied hex output as _hex_ into a Hex Editor such as https://hexed.it/ or [HxD](https://mh-nexus.de/en/hxd/)
 5. Save As...
+
+## Testing
+
+[Higan](https://higan.dev/) is able to load and emulate your EEPROM dump by renaming it as _save.eeprom_ and moving it into the _Systems/WonderSwan Color_ or _Systems/SwanCrystal_ directories.
 
 ## Custom Bootsplash
 
