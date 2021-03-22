@@ -48,7 +48,7 @@ _Optional: 1.5K pull-up resistor connected to pin 4 (DO) and pin 8 (VCC) of the 
 4. Paste the copied hex output as _hex_ into a Hex Editor such as https://hexed.it/ or [HxD](https://mh-nexus.de/en/hxd/)
 5. Save As...
 
-## Bootsplash
+## Custom Bootsplash
 
 ### WonderSwan Color
 
