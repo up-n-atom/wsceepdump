@@ -44,7 +44,7 @@ _Optional: 1.5K pull-up resistor connected to pin 4 (DO) and pin 8 (VCC) of the 
 
 ## Usage
 
-1. Upload the Arduino sketch and run the Arduino IDE Serial Monitor or any alternative serial terminal such as [Tera Term](https://ttssh2.osdn.jp/index.html.en) or [Putty](https://www.putty.org/).
+1. Upload the [Arduino sketch](/arduino/wsc.ino) and run the Arduino IDE Serial Monitor or any alternative serial terminal such as [Tera Term](https://ttssh2.osdn.jp/index.html.en) or [Putty](https://www.putty.org/).
 2. Send an **r** character to read the EEPROM.
 3. Select all and copy the hex output.
 4. Paste the copied hex output as _hex_ into a Hex Editor such as https://hexed.it/ or [HxD](https://mh-nexus.de/en/hxd/)
