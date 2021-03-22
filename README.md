@@ -48,11 +48,12 @@ _Optional: 1.5K pull-up resistor connected to pin 4 (DO) and pin 8 (VCC) of the 
 
 ## Bootsplash
 
-### WonderSwan
+### WonderSwan Color
 
 https://github.com/up-n-atom/higan/tree/ws-bootsplash/higan/System/WonderSwan%20Color
 
 * [x] Dengeki
+* [x] NAVI GET 400 Million
 * [x] MS-06S Zaku II
 * [ ] RX-78-2
 * [ ] Inuyasha
