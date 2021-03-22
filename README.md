@@ -6,6 +6,8 @@ _Always test on a handheld of lesser importance to confirm its operation_
 
 ## Components
 
+> Shop around, AliExpress links are non-affiliated top searches.
+
 * 1x Blue Pill [[AliExpress](https://www.aliexpress.com/item/32792513237.html)]
 * 1x ST-Link<sup>1</sup> or USB to TTL<sup>2</sup> [[AliExpress<sup>1</sup>](https://www.aliexpress.com/item/32887597480.html) or [AliExpress<sup>2</sup>](https://www.aliexpress.com/item/32946781917.html)]
 * 1x SOP8 Test Clip [[AliExpress](https://www.aliexpress.com/item/32968334401.html)]
@@ -16,6 +18,8 @@ _Always test on a handheld of lesser importance to confirm its operation_
 ## Arduino Bootloader
 
 There are nemerous guides on how to install the STM32duino bootloader and the following video https://www.youtube.com/watch?v=Myon8H111PQ does an excellent job of describing the process.
+
+Additionally, you may require the [STM32 Virtual COM Port Driver](https://www.st.com/en/development-tools/stsw-stm32102.html).
 
 ## Wiring
 
@@ -31,6 +35,8 @@ There are nemerous guides on how to install the STM32duino bootloader and the fo
 | 3.3       | 8         | VCC        |
 
 1.2K pull-down resistor connected to pin 1 (Chip Select) and pin 5 (Ground) of the test clip.
+
+_Optional: 1.5K pull-up resistor connected to pin 4 (DO) and pin 8 (VCC) of the test clip._
 
 ## Usage
 
