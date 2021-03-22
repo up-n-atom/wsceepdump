@@ -2,9 +2,9 @@
 
 _⚠️ USE WITH CAUTION! Always test on a handheld of lesser importance to confirm its operation_
 
-Each boot writes to the EEPROM and with it you will lose the genuineness of the data. This includes the cart count, boot count, and previous booted cartridge. If these are not important, a custom rom and serial cable is the more convenient alternative.
+Each boot writes to the EEPROM you lose the authenticity of the factory default. Such writes include the _"unique"_ cartridge count, boot count, and previously booted cartridge identifiers. If these are not important, a custom rom and serial cable is the more convenient alternative.
 
-Fun Fact: The SwanCrystal EEPROM contains the Bandai bootsplash.
+> Fun Fact: The SwanCrystal EEPROM contains the Bandai bootsplash present in the bootrom.
 
 ![Wired](images/wired.jpg?raw=true "Wired")
 
