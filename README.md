@@ -1,6 +1,6 @@
 # WonderSwan Color/Swan Crystal EEPROM dumper
 
-_Always test on a handheld of lesser importance to confirm its operation_
+_USE WITH CAUTION! Always test on a handheld of lesser importance to confirm its operation_
 
 ![Wired](images/wired.jpg?raw=true "Wired")
 
