@@ -44,6 +44,8 @@ Additionally, you may require the [STM32 Virtual COM Port Driver](https://www.st
 
 _Optional: 1.5K pull-up resistor connected to pin 4 (DO) and pin 8 (VCC) of the test clip._
 
+![SwanCrystal EEPROM](images/sceeprom.jpg?raw=true "SwanCrystal EEPROM")
+
 ## Usage
 
 1. Upload the [Arduino sketch](/arduino/wsc.ino) and run the Arduino IDE Serial Monitor or any alternative serial terminal such as [Tera Term](https://ttssh2.osdn.jp/index.html.en) or [Putty](https://www.putty.org/).
