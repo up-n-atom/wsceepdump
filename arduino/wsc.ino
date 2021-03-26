@@ -4,6 +4,7 @@
 	which is used in an AEG 55GAD84AE induction hob.
 	Some bits were flipped depending on temperature.
 	Writing it back solved this problem.
+
 	Modified for the STM32duino Blue Pill to read the
 	WonderSwan Color/Swan Crystal.
 */
@@ -82,11 +83,85 @@ void data_read2buf_bitbang ( uint16_t addr, uint16_t len, uint16_t *buf )
 	digitalWrite ( CS, LOW );
 }
 
+void ewen_set_bitbang ()
+{
+	int i;
+  
+	digitalWrite ( CS, HIGH );
+  
+	spi_bit_tx ( 1 );
+  
+	spi_bit_tx ( 0 );
+	spi_bit_tx ( 0 );
+  
+	for ( i = 0; i < 10; i++ )
+		spi_bit_tx ( 1 );
+  
+	digitalWrite ( CS, LOW );
+  
+	delay ( 10 );
+}
+
+void data_write_bitbang ( uint16_t addr, uint16_t data )
+{
+	int i;
+  
+	digitalWrite ( CS, HIGH );
+  
+	spi_bit_tx ( 1 );
+  
+	spi_bit_tx ( 0 );
+	spi_bit_tx ( 1 );
+  
+	for ( i = 9; i >= 0; i-- )
+	{
+		spi_bit_tx ( (addr >> i ) & 1 );
+	}
+  
+	for ( i = 15; i >= 0; i-- )
+	{
+		spi_bit_tx ( (data >> i ) & 1 );
+	}
+
+	/* clock */
+	digitalWrite ( CK, HIGH );
+	delayMicroseconds ( 10 );
+	digitalWrite ( CK, LOW );
+	delayMicroseconds ( 10 );
+  
+	digitalWrite ( CS, LOW );
+  
+	/* clock */
+	digitalWrite ( CK, HIGH );
+	delayMicroseconds ( 10 );
+	digitalWrite ( CK, LOW );
+	delayMicroseconds ( 10 );
+  
+	digitalWrite ( CS, HIGH );
+  
+	/* clock 'til ready */
+	digitalWrite ( CK, HIGH );
+	delayMicroseconds ( 10 );
+  
+	while ( !digitalRead ( DO ) )
+	{
+		digitalWrite ( CK, LOW );
+		delayMicroseconds ( 10 );
+		digitalWrite ( CK, HIGH );
+		delayMicroseconds ( 10 );
+	}
+
+	digitalWrite ( CK, LOW );
+	delayMicroseconds ( 10 );
+  
+	digitalWrite ( CS, LOW );
+}
+
 void setup ()
 {
-	pinMode(CS, OUTPUT);
-	pinMode(DI, OUTPUT);
-	pinMode(CK, OUTPUT);
+	pinMode ( CS, OUTPUT );
+	pinMode ( DI, OUTPUT );
+	pinMode ( CK, OUTPUT );
 
 	Serial.begin ( 115200 );
 }
