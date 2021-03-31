@@ -67,7 +67,7 @@ https://github.com/up-n-atom/higan/tree/ws-bootsplash/higan/System/WonderSwan%20
 * [x] Dengeki
 * [x] NAVI GET 400 Million
 * [x] MS-06S Zaku II
-* [ ] RX-78-2
+* [x] RX-78-2
 * [ ] Inuyasha
 
 ### SwanCrystal
