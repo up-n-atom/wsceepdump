@@ -98,8 +98,6 @@ void ewen_set_bitbang ()
 		spi_bit_tx ( 1 );
   
 	digitalWrite ( CS, LOW );
-  
-	delay ( 10 );
 }
 
 void data_write_bitbang ( uint16_t addr, uint16_t data )
@@ -125,34 +123,34 @@ void data_write_bitbang ( uint16_t addr, uint16_t data )
 
 	/* clock */
 	digitalWrite ( CK, HIGH );
-	delayMicroseconds ( 10 );
+	delayMicroseconds ( DELAY_MS );
 	digitalWrite ( CK, LOW );
-	delayMicroseconds ( 10 );
+	delayMicroseconds ( DELAY_MS );
   
 	digitalWrite ( CS, LOW );
   
 	/* clock */
 	digitalWrite ( CK, HIGH );
-	delayMicroseconds ( 10 );
+	delayMicroseconds ( DELAY_MS );
 	digitalWrite ( CK, LOW );
-	delayMicroseconds ( 10 );
+	delayMicroseconds ( DELAY_MS );
   
 	digitalWrite ( CS, HIGH );
   
 	/* clock 'til ready */
 	digitalWrite ( CK, HIGH );
-	delayMicroseconds ( 10 );
+	delayMicroseconds ( DELAY_MS );
   
 	while ( !digitalRead ( DO ) )
 	{
 		digitalWrite ( CK, LOW );
-		delayMicroseconds ( 10 );
+		delayMicroseconds ( DELAY_MS );
 		digitalWrite ( CK, HIGH );
-		delayMicroseconds ( 10 );
+		delayMicroseconds ( DELAY_MS );
 	}
 
 	digitalWrite ( CK, LOW );
-	delayMicroseconds ( 10 );
+	delayMicroseconds ( DELAY_MS );
   
 	digitalWrite ( CS, LOW );
 }
