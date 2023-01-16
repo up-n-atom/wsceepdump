@@ -69,6 +69,7 @@ https://github.com/up-n-atom/higan/tree/ws-bootsplash/higan/System/WonderSwan%20
 * [x] MS-06S Zaku II
 * [x] RX-78-2
 * [ ] Inuyasha
+* [ ] Growlmon
 
 ### SwanCrystal
 
