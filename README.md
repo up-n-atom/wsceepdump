@@ -2,7 +2,7 @@
 
 _⚠️ USE WITH CAUTION! Always test on a handheld of lesser importance to confirm its operation_
 
-On each boot the bootrom writes to the EEPROM, removing the authenticity of the factory default. Such writes include the _"unique"_ cartridge count, boot count, and previously booted cartridge identifier. If these are not important, a custom rom and serial cable is the more convenient alternative.
+On each boot the bootrom writes to the EEPROM, removing the authenticity of the factory default. Such writes include the _"unique"_ cartridge count, boot count, and previously booted cartridge identifier. If these are not important, a custom rom and serial cable is the more convenient alternative, eg. https://github.com/asiekierka/ws-ieepview
 
 > Fun Fact: The SwanCrystal EEPROM contains the Bandai bootsplash present in the bootrom.
 
