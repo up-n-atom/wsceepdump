@@ -9,6 +9,8 @@
 	WonderSwan Color/Swan Crystal.
 */
 
+#include <limits.h>
+
 #define DELAY_MS 10
 
 /* Bitbang using the SPI port of the Blue Pill. The
@@ -23,7 +25,12 @@
 	3.3 -> 8
 	1.2K pull-down resistor on CS */
 
-#define SZ 1024 /* EEPROM word size */
+#define WS_ADDR_BITS 6 /* 1024bit eeprom */
+#define WSC_ADDR_BITS 10 /* 16384bit eeprom */
+
+#define DATA_BITS 16
+
+uint16_t addr_bits = WSC_ADDR_BITS;
 
 void spi_bit_tx ( uint8_t bit )
 {
@@ -65,7 +72,7 @@ void data_read2buf_bitbang ( uint16_t addr, uint16_t len, uint16_t *buf )
 	spi_bit_tx ( 0 );
 
 	/* address */
-	for ( i = 9; i >= 0; i-- )
+	for ( i = addr_bits - 1; i >= 0; i-- )
 	{
 		spi_bit_tx ( ( addr >> i ) & 1 );
 	}
@@ -73,7 +80,7 @@ void data_read2buf_bitbang ( uint16_t addr, uint16_t len, uint16_t *buf )
 	/* continuous data */
 	for ( i = 0; i < len; i++ )
 	{
-		for ( j = 0; j < 16; j++ )
+		for ( j = 0; j < DATA_BITS; j++ )
 		{
 			buf[ i ] <<= 1;
 			buf[ i ] |= spi_bit_rx ();
@@ -94,7 +101,7 @@ void ewen_set_bitbang ()
 	spi_bit_tx ( 0 );
 	spi_bit_tx ( 0 );
   
-	for ( i = 0; i < 10; i++ )
+	for ( i = 0; i < addr_bits; i++ )
 		spi_bit_tx ( 1 );
   
 	digitalWrite ( CS, LOW );
@@ -111,12 +118,12 @@ void data_write_bitbang ( uint16_t addr, uint16_t data )
 	spi_bit_tx ( 0 );
 	spi_bit_tx ( 1 );
   
-	for ( i = 9; i >= 0; i-- )
+	for ( i = addr_bits - 1; i >= 0; i-- )
 	{
 		spi_bit_tx ( (addr >> i ) & 1 );
 	}
   
-	for ( i = 15; i >= 0; i-- )
+	for ( i = DATA_BITS - 1; i >= 0; i-- )
 	{
 		spi_bit_tx ( (data >> i ) & 1 );
 	}
@@ -176,12 +183,20 @@ void loop ()
 		{
 			case -1:
 				break;
+			case 'm':
+				addr_bits = WS_ADDR_BITS;
+				break;
+			case 'c':
+				addr_bits = WSC_ADDR_BITS;
+				break;
 			case 'r':
-				buf = (uint16_t *) calloc ( SZ, sizeof ( uint16_t ) );
+				uint16_t sz = ( ( uint16_t ) -1 ) >> ( ( sizeof ( uint16_t ) * CHAR_BIT ) - addr_bits ) + 1;
 
-				data_read2buf_bitbang ( 0, SZ, buf );
+				buf = (uint16_t *) calloc ( sz, sizeof ( uint16_t ) );
 
-				for ( i = 0; i < SZ; i++ )
+				data_read2buf_bitbang ( 0, sz, buf );
+
+				for ( i = 0; i < sz; i++ )
 				{
 					/* format as little endian */
 					sprintf ( s, " %02X %02X", ( int )( buf[ i ] & 0xFF ), ( int )( buf[ i ] >> 8 ) );
