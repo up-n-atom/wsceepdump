@@ -191,7 +191,7 @@ void loop ()
 				addr_bits = WSC_ADDR_BITS;
 				break;
 			case 'r':
-				sz = ( ( uint16_t ) -1 ) >> ( ( sizeof ( uint16_t ) * CHAR_BIT ) - addr_bits ) + 1;
+				sz = ( ( ( uint16_t ) -1 ) >> ( ( sizeof ( uint16_t ) * CHAR_BIT ) - addr_bits ) ) + 1;
 
 				buf = (uint16_t *) calloc ( sz, sizeof ( uint16_t ) );
 
