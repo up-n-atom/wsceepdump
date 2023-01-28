@@ -9,8 +9,6 @@
 	WonderSwan Color/Swan Crystal.
 */
 
-#include <limits.h>
-
 #define DELAY_MS 10
 
 /* Bitbang using the SPI port of the Blue Pill. The
@@ -191,7 +189,7 @@ void loop ()
 				addr_bits = WSC_ADDR_BITS;
 				break;
 			case 'r':
-				sz = ( ( ( uint16_t ) -1 ) >> ( ( sizeof ( uint16_t ) * CHAR_BIT ) - addr_bits ) ) + 1;
+				sz = 1 << addr_bits;
 
 				buf = (uint16_t *) calloc ( sz, sizeof ( uint16_t ) );
 
